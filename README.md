@@ -1,7 +1,7 @@
-# ✍️ Air-Writing Gesture Recognition (HMM)
+# Air-Writing Gesture Recognition (HMM)
 
-**Draw a letter in the air with your index finger – the webcam recognises it in real time.**
-MediaPipe extracts 21 hand landmarks per frame, the fingertip trajectory is normalised and resampled, and one Gaussian Hidden Markov Model per class picks the most likely letter (A–Z, extensible to custom symbols).
+**Draw a letter in the air with your index finger and the webcam recognises it in real time.**
+MediaPipe extracts 21 hand landmarks per frame, the fingertip trajectory is normalised and resampled, and one Gaussian Hidden Markov Model per class picks the most likely letter (A-Z, extensible to custom symbols).
 
 <p align="center">
   <img src="images/demo_A.gif" width="260" alt="Demo: letter A">
@@ -18,15 +18,15 @@ MediaPipe extracts 21 hand landmarks per frame, the fingertip trajectory is norm
 | Test setting | Accuracy |
 |---|---|
 | Known people, unseen recordings | **92 %** |
-| Leave-one-person-out (completely new person) | **⌀ 73 %** (62–87 %) |
+| Leave-one-person-out (completely new person) | **avg. 73 %** (62-87 %) |
 
-**My role (Arian Sharifi-Tabar)** – data acquisition, dataset & baseline HMM:
-- built the guided A–Z recording workflow and fixed the end-to-end recording pipeline
+**My role (Arian Sharifi-Tabar):** data acquisition, dataset and baseline HMM
+- built the guided A-Z recording workflow and fixed the end-to-end recording pipeline
 - implemented raw-recording cleaning and `dataset_building()` (X, y, sequence lengths, sequence-level stratified split to avoid leakage)
 - implemented the first HMM classifier (one `GaussianHMM` per class) and the first dataset visualisations
-- contributed a full A–Z recording set plus extra samples for weak classes
+- contributed a full A-Z recording set plus extra samples for weak classes
 
-> Team project (4 people), MPT course, HSD Düsseldorf, summer semester 2026 · Original repository: [22wayan/GestureRecognitionMPT](https://github.com/22wayan/GestureRecognitionMPT) · Full team breakdown: [docs/teambeitraege.md](docs/teambeitraege.md)
+> Team project (4 people), MPT course, HSD Düsseldorf, summer semester 2026. Original repository: [22wayan/GestureRecognitionMPT](https://github.com/22wayan/GestureRecognitionMPT). Full team breakdown: [docs/teambeitraege.md](docs/teambeitraege.md)
 >
 > The detailed documentation below is in German.
 
