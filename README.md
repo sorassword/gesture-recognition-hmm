@@ -1,4 +1,38 @@
-# GestureRecognitionMPT
+# ✍️ Air-Writing Gesture Recognition (HMM)
+
+**Draw a letter in the air with your index finger – the webcam recognises it in real time.**
+MediaPipe extracts 21 hand landmarks per frame, the fingertip trajectory is normalised and resampled, and one Gaussian Hidden Markov Model per class picks the most likely letter (A–Z, extensible to custom symbols).
+
+<p align="center">
+  <img src="images/demo_A.gif" width="260" alt="Demo: letter A">
+  <img src="images/demo_M.gif" width="260" alt="Demo: letter M">
+  <img src="images/demo_W.gif" width="260" alt="Demo: letter W">
+</p>
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-0097A7?logo=google&logoColor=white)
+![hmmlearn](https://img.shields.io/badge/hmmlearn-HMM-555)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?logo=opencv&logoColor=white)
+![Sphinx](https://img.shields.io/badge/docs-Sphinx-000?logo=sphinx&logoColor=white)
+
+| Test setting | Accuracy |
+|---|---|
+| Known people, unseen recordings | **92 %** |
+| Leave-one-person-out (completely new person) | **⌀ 73 %** (62–87 %) |
+
+**My role (Arian Sharifi-Tabar)** – data acquisition, dataset & baseline HMM:
+- built the guided A–Z recording workflow and fixed the end-to-end recording pipeline
+- implemented raw-recording cleaning and `dataset_building()` (X, y, sequence lengths, sequence-level stratified split to avoid leakage)
+- implemented the first HMM classifier (one `GaussianHMM` per class) and the first dataset visualisations
+- contributed a full A–Z recording set plus extra samples for weak classes
+
+> Team project (4 people), MPT course, HSD Düsseldorf, summer semester 2026 · Original repository: [22wayan/GestureRecognitionMPT](https://github.com/22wayan/GestureRecognitionMPT) · Full team breakdown: [docs/teambeitraege.md](docs/teambeitraege.md)
+>
+> The detailed documentation below is in German.
+
+---
+
+## Projektbeschreibung (DE)
 MPT Projekt zur Erkennung von Gesten in Webcam-Daten.
 Dafür werden Hand-Landmarks extrahiert und anschließend mit einem [Hidden-Markov-Modell](https://de.wikipedia.org/wiki/Hidden_Markov_Model) (HMM) klassifiziert.
 Die Online-Dokumentation zur Bearbeitung des Projekts finden sie [hier](https://jaboll-ai.github.io/GestureRecognitionMPT).
